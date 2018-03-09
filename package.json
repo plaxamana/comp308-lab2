@@ -1,0 +1,25 @@
+{
+  "name": "philiplaxamana-comp308lab1",
+  "version": "1.0.0",
+  "description": "Emerging Tech Lab 1",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "author": "Philip Laxamana",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
+    "compression": "^1.7.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0"
+  }
+}

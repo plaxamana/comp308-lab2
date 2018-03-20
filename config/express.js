@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const path = require('path');
+const mongoose = require('mongoose');
 
 // Define the Express configuration method
 module.exports = function() {

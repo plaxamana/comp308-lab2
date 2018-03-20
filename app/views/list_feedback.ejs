@@ -1,0 +1,11 @@
+<% include ./partials/header.ejs %>
+<% feedback.forEach(function(feedback)){ %>
+    <div class="card card-body mt-3 mb-3">
+        <h4><%= firstName %></h4>
+        <h4><%= lastName %></h4>
+        <h4><%= email %></h4>
+        <h4><%= favFood %></h4>
+        <h4><%= fact %></h4>
+        <h4><%= comment %></h4>
+<% })%>
+<% include ./partials/footer.ejs %>

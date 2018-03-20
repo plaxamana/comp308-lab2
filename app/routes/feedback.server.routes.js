@@ -5,4 +5,5 @@ const feedback = require('../controllers/feedback.server.controller.js');
 module.exports = (app) => {
     // Mount the 'feedback' controller's 'render' method
     app.post('/thankyou', feedback.displayThankyou);
+    app.get('/list_feedback', feedback.readFeedback);
 }

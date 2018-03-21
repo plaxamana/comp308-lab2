@@ -1,5 +1,7 @@
 // Load the 'Feedback' Mongoose model
-var Feedback = require('mongoose').model('Feedback');
+const mongoose = require('mongoose');
+require('../models/feedback.server.model')
+const Feedback = mongoose.model('Feedback');
 
 exports.createFeedback = function(req, res, next){
     var feedback = new Feedback(req.body);
@@ -23,22 +25,25 @@ exports.readFeedback = function(req, res, next){
             return next(err);
         } else{
             res.render('list_feedback', {
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                favFood: req.body.favFood,
-                fact: req.body.fact,
-                comment: req.body.comment
-            })
+                feedback: feedback
+            });
         }
+        console.log(feedback);
     })
 }
 
 // Create a new 'render' controller method
 exports.displayThankyou = (req, res) => {
+    var feedback = new Feedback(req.body);
 
-    res.render('thankyou', {
-        message: 'Thank you for your awesome feedback, we really appriciate it!'
+    feedback.save(function(err){
+        if(err){
+            return next(err);
+        } else{
+            res.render('thankyou', {
+                message: 'Thank you for your awesome feedback, we really appriciate it!'
+            });
+        }
     });
 
     console.log('POST Request made to /thankyou');
